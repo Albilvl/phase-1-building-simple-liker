@@ -4,8 +4,21 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+const errorModal = document.querySelector(`#modal`)
+errorModal.className = `hidden`
 
+const btn = document.querySelectorAll(`.like-glyph`)
+btn.forEach(heart => heart.addEventListener('click',(e)=>{
+    if (e.target.textContent === EMPTY_HEART){
+        e.target.textContent = FULL_HEART;
+        e.target.className = `activated-heart`
+    } else {
+      e.target.textContent = EMPTY_HEART
+      e.target.className = ``
+    }
+  })
 
+)
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
